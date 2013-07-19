@@ -7,15 +7,44 @@
     <title>The Scott Beachy Project</title>
     <link href="style.css" rel="stylesheet" />
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $(".secondNav").css("display", "none");
+            $(".secondNav1").css("display", "none");
+
+            $("#first").mouseenter(function () {
+                //$(".firstNav").css("z-index", "9999");
+                $(".secondNav").css("display", "block");
+            });
+            $("#firstNav").mouseleave(function () {
+                $(".secondNav").css("display", "none");
+            });
+
+            $("#second").mouseenter(function () {
+                $(".secondNav1").css("display", "block");
+            });
+            $("#secondNav").mouseleave(function () {
+                $(".secondNav1").css("display", "none");
+            });
+            
+        });
+
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
         <div id="header" style="color:#FFF;">
             <div id="header_content">
-                <ul id="navList">
-                    <li><a id="firstNav" href="#">Link 1</a></li>
-                    <li><a id="secondNav" href="#">Link 2</a></li>
-                    <li><a id="thirdNav" href="#">Link 3</a></li>
+                <ul class="navList" id="firstNav">
+                    <li><a class="firstNav" id="first" href="#">Link 1</a></li>
+                    <li><a class="secondNav" href="#">SubLink 1</a></li>
+                    <li><a class="secondNav" href="#">SubLink 2</a></li>
+                </ul>
+                <ul class="navList" id="secondNav">
+                    <li><a class="firstNav" id="second" href="#">Link 2</a></li>
+                    <li><a class="secondNav1" href="#">SubLink 1a</a></li>
+                    <li><a class="secondNav1" href="#">SubLink 2a</a></li>
                 </ul>
             </div>
 
